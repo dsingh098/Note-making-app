@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+     <!-- Navbar -->
+     <div class="navbar">
+        <button onclick="showSection('createNoteSection')">Create Note</button>
+        <button onclick="showSection('updateNoteSection')">Update Note</button>
+        <button onclick="showSection('findDeleteNoteSection')">Find & Delete Note</button>
+        <button onclick="showSection('showAllNotesSection')">Show All Notes</button>
+    </div>
+
+    <div class="container">
+
+        <!-- Create Note Section (Visible by default) -->
+        <div id="createNoteSection" class="section active">
+            <h2>Create Note</h2>
+            <input type="text" id="title" placeholder="Note Title">
+            <textarea id="content" placeholder="Note Content"></textarea>
+            <button onclick="addNote()">Add Note</button>
+        </div>
+
+        <!-- Update Note Section -->
+        <div id="updateNoteSection" class="section">
+            <h2>Update Note</h2>
+            <input type="text" id="updateTitle" placeholder="Current Title">
+            <input type="text" id="newTitle" placeholder="New Title">
+            <textarea id="newcontent" placeholder="Enter new content"></textarea>
+            <button onclick="updateNotebyTitle(document.getElementById('updateTitle').value)">Update Note</button>
+        </div>
+
+        <!-- Find & Delete Note Section -->
+        <div id="findDeleteNoteSection" class="section">
+            <h2>Find & Delete Note</h2>
+            <input type="text" id="searchTitle" placeholder="Search By Title">
+            <button onclick="findNoteByTitle()">Find Note</button>
+            <button onclick="deleteNoteByTitle()">Delete Note</button>
+            <div id="noteDetails"></div>
+        </div>
+
+        <!-- Show All Notes Section -->
+        <div id="showAllNotesSection" class="section">
+            <h2>All Notes</h2>
+            <div id="notes" class="notes-container"></div>
+        </div>
+
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
