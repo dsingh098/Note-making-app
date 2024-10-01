@@ -41,9 +41,10 @@ input, textarea {
 button {
   padding: 10px 20px;
   background-color: #28a745;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
+
 }
 
 button:hover {
@@ -54,4 +55,7 @@ button:hover {
   border: 1px solid #ddd;
   margin: 10px 0;
   padding: 10px;
+}
+.align-button{
+  border-radius: 10px 20px;
 }
