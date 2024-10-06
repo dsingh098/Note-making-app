@@ -35,49 +35,91 @@
             <div class="editor-toolbar">
                 <button id="bold-button" title="Bold"><i class="fas fa-bold"></i></button>
                 <button id="italic-button" title="Italic"><i class="fas fa-italic"></i></button>
-                
-                <select id="font-size" title="Font Size">
-                    <option value="1">Small</option>
-                    <option value="3" selected>Normal</option>
-                    <option value="5">Large</option>
-                </select>
     
-                <select id="font-size" title="Font Size">
-                    <option value="8">8</option>
-                    <option value="10" selected selected>10</option>
-                    <option value="12" selected>12</option>
-                    <option value="14" selected>14</option>
-                    <option value="16" selected selected>16</option>
-                    <option value="18" selected>18</option>
-                    <option value="20" selected>20</option>
-                    <option value="22" selected selected>22</option>
-                    <option value="24" selected>24</option>
-                </select>
-        
-                <select id="font-family" title="Font Family">
-                    <option value="Arial">Arial</option>
-                    <option value="Courier New">Courier New</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                </select>
-                
+    
+    
+    
+                <div class="custom-select smaller-box">
+                    <select class="form-control" title="Heading">
+                        <option value="1">Small</option>
+                        <option value="3" selected>Normal</option>
+                        <option value="5">Large</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+    
+                <!-- Font Size Dropdown (Numeric) -->
+                <div class="custom-select smaller-box2">
+                    <select id="font-size" title="Font Size">
+                        <option value="8">8</option>
+                        <option value="10" selected>10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="22">22</option>
+                        <option value="24">24</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+    
+                <!-- Font Family Dropdown -->
+                <div class="custom-select">
+                    <select id="font-family" title="Font Family">
+                        <option value="Arial">Arial</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+    
                 <div class="color-picker" title="Text Color">
                     <button id="color-button" title="Pick Color"><i class="fas fa-paint-brush"></i></button>
                     <div id="color-options"></div>
                 </div>
     
-                <!-- List  to ORDER LIST -->
-                <div class="order_list" title="Order List">
-                    <button id="order" title="Unorder"><i class="fas fa-list"></i></button>
-                    <div id="order_list"></div>
+                <div class="dropdown-container">
+                    <button id="order-button" title="Number List">
+                        <i class="fas fa-list-ol"></i> <!-- Default icon -->
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <button class="dropdown-item" data-value="ordered-list">
+                            <i class="fas fa-list-ol"></i> <!-- Ordered List Icon -->
+                        </button>
+                        <button class="dropdown-item" data-value="unordered-list">
+                            <i class="fas fa-list-ul"></i> <!-- Unordered List Icon -->
+                        </button>
+                        <button class="dropdown-item" data-value="none">
+                            <i class="fas fa-times"></i> <!-- None/Cancel Icon -->
+                        </button>
+                    </div>
                 </div>
     
-                <!--  UNORDER LIST-->
-                <div class="unorder_list" title="Unorder List">
-                    <button id="order" title="Order"><i class="fas fa-list-ol"></i></button>
-                    <div id="unorder_list"></div>
+    
+    
+                <!-- List  to UNORDER LIST -->
+                <div class="dropdown-container">
+                    <button id="order-button" title="Bullet List">
+                        <i class="fas fa-list"></i> 
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="dropdown-content" id="dropdown-menu">
+                        <button class="dropdown-item" data-value="ordered-list">
+                            <i class="fas fa-list-ol"></i>
+                        </button>
+                        <button class="dropdown-item" data-value="unordered-list">
+                            <i class="fas fa-list-ul"></i> 
+                        </button>
+                        <button class="dropdown-item" data-value="none">
+                            <i class="fas fa-times"></i> 
+                        </button>
+                    </div>
                 </div>
+    
             </div>
-            
+    
             <textarea id="text-area" class="editor-textarea" placeholder="Start typing here..."></textarea>
         </div>
         <script src="../src/funtion.js"></script>

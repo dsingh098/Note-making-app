@@ -4,3 +4,5 @@ node_modules
 .vscode
 package-lock.json
 src/index.html
+SVG icons
+file.htm

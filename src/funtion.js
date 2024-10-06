@@ -52,3 +52,28 @@ async function loadColors() {
       colorOptions.style.display = 'none';
     }
   });
+
+
+  // Toggle dropdown menu on button click
+document.getElementById("order-button").addEventListener("click", function () {
+  var dropdownMenu = document.getElementById("dropdown-menu");
+  if (dropdownMenu.style.display === "block") {
+      dropdownMenu.style.display = "none"; // Hide the menu if it is visible
+  } else {
+      dropdownMenu.style.display = "block"; // Show the menu if it is hidden
+  }
+});
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('#order-button')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.style.display === "block") {
+              openDropdown.style.display = "none";
+          }
+      }
+  }
+};
+
