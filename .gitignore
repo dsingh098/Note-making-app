@@ -3,3 +3,6 @@ node_modules
 .idea
 .vscode
 package-lock.json
+src/index.html
+SVG icons
+file.htm

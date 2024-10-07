@@ -1,3 +1,4 @@
+/* Container for the editor */
 .editor-container {
     width: 87%;
     margin: 20px auto;
@@ -7,47 +8,136 @@
     box-sizing: border-box;
     max-height: 1920px;
     overflow-x: auto;
-  }
-  
-  .editor-toolbar {
+}
+
+/* Toolbar styling */
+.editor-toolbar {
     display: flex;
-    margin-top: 15px;
+    flex-wrap: wrap; /* Allow items to wrap */
+    align-items: center; /* Vertically align all items */
     justify-content: flex-start;
     margin-bottom: 10px;
     background-color: #f5f5f5;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-  }
-  
-  .editor-toolbar button,
-  .editor-toolbar select {
+    gap: 10px; /* Space between buttons */
+}
+
+/* Styling for buttons and dropdowns in the toolbar */
+.editor-toolbar button,
+.editor-toolbar select {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 5px 10px;
     margin-right: 5px;
     cursor: pointer;
     font-size: 16px;
-  }
-  
-  .editor-toolbar button:hover,
-  .editor-toolbar select:hover {
+    height: 40px; /* Set uniform height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor-toolbar button:hover,
+.editor-toolbar select:hover {
     background-color: #eee;
-  }
-  
-  
-  
-  .color-picker {
+}
+
+/* Dropdown styling */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+#order-button .fas.fa-list-ol ,.fas.fa-list {
+    margin-right: 8px; /* Add some space between the icons */
+}
+
+
+.dropdown-button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icons */
+    height: 40px; /* Set uniform height */
+}
+
+/* Hide the dropdown content by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 50px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-top: 5px;
+}
+
+/* Show dropdown on button click */
+.dropdown-content.show {
+    display: block;
+}
+
+/* Dropdown items styling */
+.dropdown-content button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.dropdown-content button:hover {
+    background-color: #ddd;
+}
+
+/* Custom container for the select and icon */
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Adjust width as needed */
+    height: 40px; /* Set uniform height */
+}
+
+/* Remove the default dropdown arrow */
+.custom-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    width: 100%;
+    padding-right: 30px; /* Space for the custom icon */
+    height: 100%;
+}
+
+/* Position the Font Awesome chevron icon */
+.custom-select i.fas.fa-chevron-down {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Color picker styling */
+.color-picker {
     display: flex;
     align-items: center;
     position: relative;
-  }
-  
-  #color-options {
+    height: 40px; /* Set uniform height */
+}
+
+#color-options {
     display: none;
     position: absolute;
-    top: 35px;
-    left: 0;
+    top: 43px;
+    left: -2px;
     z-index: 10;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -55,15 +145,15 @@
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
-  }
-  
-  #color-options.show {
+}
+
+#color-options.show {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     opacity: 1;
-  }
-  
-  .color-option {
+}
+
+.color-option {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -73,13 +163,13 @@
     transition: border 0.2s ease;
     box-sizing: border-box;
     margin: 0;
-  }
-  
-  .color-option:hover {
+}
+
+.color-option:hover {
     border: 2px solid rgba(0, 0, 0, 0.5);
-  }
-  
-  .tooltip {
+}
+
+.tooltip {
     visibility: hidden;
     background-color: #333;
     color: #fff;
@@ -93,16 +183,17 @@
     transform: translateX(-50%);
     opacity: 0;
     transition: opacity 0.3s;
-  }
-  
-  .color-option:hover .tooltip {
+}
+
+.color-option:hover .tooltip {
     visibility: visible;
     opacity: 1;
-  }
-  
-  .editor-textarea {
+}
+
+/* Textarea for editing content */
+.editor-textarea {
     width: 100%;
-    margin-top: 60px;
+    margin-top: 10px;
     height: 420px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -112,4 +203,13 @@
     resize: none;
     box-sizing: border-box;
     overflow-x: auto;
-  }
+}
+
+/* Adjusted dropdowns to smaller sizes */
+.custom-select.smaller-box {
+    width: 15%;
+}
+
+.custom-select.smaller-box2 {
+    width: 9%;
+}
